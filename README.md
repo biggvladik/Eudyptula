@@ -52,6 +52,7 @@ kernel configuration file is a precious thing, all kernel developers
 have one they have grown and tended to over the years.  This is the
 start of a long journey with yours, don't discard it like was a broken
 umbrella, it deserves better than that.
+
 -------------------------------------
 TASK 3
 -------------------------------------
