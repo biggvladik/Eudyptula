@@ -71,11 +71,3 @@ The tasks for this round is:
     that would be acceptable for merging in the kernel source tree.
     (Hint, read the file Documentation/SubmittingPatches and follow the
     steps there.)
-
-Remember to use your ID assigned to you in the Subject: line when
-responding to this task, so that I can figure out who to attribute it
-to.
-
-If you forgot, your id is "7c1caf2f50d1".  Surely I don't need to keep
-saying this right?  I know, _you_ wouldn't forget, but someone else, of
-course they would, so I'll just leave it here for those "others".
