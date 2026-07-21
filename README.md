@@ -115,7 +115,7 @@ don't focus on that, just look at the patterns here, and fix up the
 coding style, do not remove lines of code.
 
 -------------------------------------
-This is Task 05 of the Eudyptula Challenge
+TASK 5
 ------------------------------------------
 Yeah, you survived the coding style mess!  Now, on to some "real"
 things, as I know you are getting bored by these so far.
