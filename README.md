@@ -160,5 +160,69 @@ The task this time is this:
   - The misc device should be registered when your module is loaded, and
     unregistered when it is unloaded.
   - Provide some "proof" this all works properly.
+  - 
+-------------------------------------
+TASK 7
+------------------------------------------
+reat work with that misc device driver.  Isn't that a nice and simple
+way to write a character driver?
 
+Just when you think this challenge is all about writing kernel code,
+this task is a throwback to your second one.  Yes, that's right,
+building kernels.  Turns out that's what most developers end up doing,
+tons and tons of rebuilds, not writing new code.  Sad, but it is a good
+skill to know.
+
+The tasks this round are:
+  - Download the linux-next kernel for today.  Or tomorrow, just use
+    the latest one.  It changes every day so there is no specific one
+    you need to pick.  Build it.  Boot it.  Provide proof that you built
+    and booted it.
+
+What is the linux-next kernel?  Ah, that's part of the challenge.
+
+For a hint, you should read the excellent documentation about how the
+Linux kernel is developed in Documentation/development-process/ in the
+kernel source itself.  It's a great read, and should tell you all you
+never wanted to know about what Linux kernel developers do and how they
+do it.
+
+-------------------------------------
+TASK 8
+------------------------------------------
+We will come back to the linux-next kernel in a later exercise, so don't
+go and delete that directory, you'll want it around.  But enough of
+building kernels, let's write more code!
+
+This task is much like the 06 task with the misc device, but this time
+we are going to focus on another user/kernel interface, debugfs.  It is
+rumored that the creator of debugfs said that there is only one rule for
+debugfs use, "There are no rules when using debugfs."  So let's take
+them up on that offer and see how to use it.
+
+debugfs should be mounted by your distro in /sys/kernel/debug/, if it
+isn't, then you can mount it with the line:
+        mount -t debugfs none /sys/kernel/debug/
+
+Make sure it is enabled in your kernel, with the CONFIG_DEBUG_FS option,
+you will need it for this task.
+
+The task, in specifics is:
+
+  - Take the kernel module you wrote for task 01, and modify it to be
+    create a debugfs subdirectory called "eudyptula".  In that
+    directory, create 3 virtual files called "id", "jiffies", and "foo".
+  - The file "id" operates just like it did for example 06, use the same
+    logic there, the file must be readable and writable by any user.
+  - The file "jiffies" is to be read only by any user, and when read,
+    should return the current value of the jiffies kernel timer.
+  - The file "foo" needs to be writable only by root, but readable by
+    anyone.  When writing to it, the value must be stored, up to one
+    page of data.  When read, which can be done by any user, the value
+    must be returned that is stored it it.  Properly handle the fact
+    that someone could be reading from the file while someone else is
+    writing to it (oh, a locking hint!)
+  - When the module is unloaded, all of the debugfs files are cleaned
+    up, and any memory allocated is freed.
+  - Provide some "proof" this all works.
 
