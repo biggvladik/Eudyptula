@@ -227,7 +227,7 @@ The task, in specifics is:
   - Provide some "proof" this all works.
 
 
-This is Task 09 of the Eudyptula Challenge
+Task 9
 ------------------------------------------
 
 Nice job with debugfs, that is a handy thing to remember when wanting to
